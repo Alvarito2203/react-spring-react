@@ -5,6 +5,7 @@ import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 import Login from "./components/Login";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./styles/styles.css";
 
 function App() {
@@ -54,6 +55,8 @@ function App() {
         {/* Solo permitir acceso al carrito si el usuario está autenticado */}
         <Route path="/cart" element={user ? <CartPage /> : <Navigate to="/" />} />
       </Routes>
+
+    {user && <Footer />}
     </div>
   );
 }

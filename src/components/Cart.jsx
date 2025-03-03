@@ -1,30 +1,38 @@
-import { useState } from "react";
-import "../styles/styles.css";
+import React, { useState, useEffect } from "react";
 
-function Cart() {
-  const [cartItems, setCartItems] = useState([]);
+const Cart = () => {
+    const [cart, setCart] = useState([]);
 
-  const removeFromCart = (id) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
-  };
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        setCart(storedCart);
+    }, []);
 
-  return (
-    <div className="cart-container">
-      <h2>Carrito de Compras</h2>
-      {cartItems.length === 0 ? (
-        <p>El carrito está vacío.</p>
-      ) : (
-        <ul>
-          {cartItems.map(item => (
-            <li key={item.id}>
-              {item.marca} {item.modelo} - €{item.precio}
-              <button onClick={() => removeFromCart(item.id)}>❌</button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
+    const removeFromCart = (id) => {
+        const updatedCart = cart.filter(item => item.id !== id);
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
+
+    return (
+        <div className="cart-container">
+            <h2>Carrito de Compras</h2>
+            {cart.length === 0 ? (
+                <p>El carrito está vacío.</p>
+            ) : (
+                cart.map((coche) => (
+                    <div key={coche.id} className="cart-item">
+                        <img src={coche.imagenUrl} alt={coche.marca} />
+                        <div>
+                            <h3>{coche.marca} {coche.modelo}</h3>
+                            <p>€{coche.precio}</p>
+                            <button onClick={() => removeFromCart(coche.id)}>Eliminar</button>
+                        </div>
+                    </div>
+                ))
+            )}
+        </div>
+    );
+};
 
 export default Cart;

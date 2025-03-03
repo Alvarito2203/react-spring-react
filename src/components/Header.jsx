@@ -5,13 +5,21 @@ import "../styles/styles.css";
 const Header = ({ onLogout }) => {
     return (
         <header className="header">
-            <h1>Tienda de Coches</h1>
-            <input type="text" placeholder="Buscar coches..." />
-
-            <div>
-                <Link to="/cart">🛒 Carrito</Link>
-                <button className="logout-button" onClick={onLogout}>Cerrar Sesión</button>
+            {/* Logo y título */}
+            <div className="logo-container">
+                <img src="/logo.png" alt="Logo Tienda" className="logo" />
+                <h1>Tienda de Coches</h1>
             </div>
+
+            {/* Barra de navegación */}
+            <nav className="nav-container">
+                <Link to="/cart" className="cart-link">
+                    🛒 Carrito
+                </Link>
+                <button className="logout-button" onClick={onLogout}>
+                    Cerrar Sesión
+                </button>
+            </nav>
         </header>
     );
 };

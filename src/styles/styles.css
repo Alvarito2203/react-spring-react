@@ -1,23 +1,86 @@
-/* Estilos generales */
-body {
+/* ===================== */
+/* 📌 RESETEO GENERAL */
+/* ===================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* 🔹 Evita la barra de desplazamiento horizontal */
 }
 
-/* Header */
+/* ===================== */
+/* 📌 CONTENEDOR PRINCIPAL */
+/* ===================== */
+
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================== */
+/* 📌 HEADER */
+/* ===================== */
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #282c34;
-    padding: 10px 20px;
+    background-color: #1e1e1e;
+    padding: 15px 5%;
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
-.header img {
+/* Logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
     height: 50px;
+    border-radius: 50%;
+}
+
+.logo-container h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Barra de navegación */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo del carrito */
+.cart-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-link:hover {
+    text-decoration: underline;
 }
 
 /* Botón de logout */
@@ -28,140 +91,47 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.2s ease-in-out;
 }
 
 .logout-button:hover {
     background-color: darkred;
 }
 
-/* Catálogo de coches */
-.home-container {
-    text-align: center;
-    padding: 20px;
-}
+/* ===================== */
+/* 📌 BARRA DE BÚSQUEDA */
+/* ===================== */
 
-.product-grid {
+.search-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-}
-
-.product-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 250px;
-    padding: 15px;
-    text-align: center;
-}
-
-.product-card img {
+    margin: 20px 0;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
 }
 
-.product-card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+.search-bar {
+    width: 50%;
     padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.product-card button:hover {
-    background-color: #0056b3;
-}
-
-/* Detalles del coche */
-.product-detail {
-    text-align: center;
-    padding: 20px;
-}
-
-.product-detail img {
-    width: 60%;
-    border-radius: 10px;
-}
-
-.product-detail h2 {
-    color: #333;
-}
-
-
-/* Contenedor del login */
-.login-container {
-    width: 320px;
-    margin: 80px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-/* Inputs */
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Botón de login/registro */
-.login-container button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    margin-top: 10px;
 }
 
-.login-container button:hover {
-    background-color: #0056b3;
-}
+/* ===================== */
+/* 📌 TARJETAS DE COCHES */
+/* ===================== */
 
-/* Botón de alternar entre login y registro */
-.toggle-button {
-    background: none;
-    color: #007bff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.toggle-button:hover {
-    text-decoration: underline;
-}
-
-/* Mensajes de éxito/error */
-.message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-}
-/* Estilos para la página principal */
-.home-container {
-    text-align: center;
-    padding: 20px;
-}
-
-/* Contenedor de las tarjetas */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding: 0 5%;
+    max-width: 100%;
 }
 
-/* Tarjetas de coches */
+/* Estilos de cada tarjeta */
 .product-card {
     background: white;
     border-radius: 10px;
@@ -186,14 +156,13 @@ body {
     border-radius: 5px;
 }
 
-/* Título */
+/* Título y precio */
 .product-card h3 {
     margin: 10px 0;
     font-size: 18px;
     color: #333;
 }
 
-/* Precio */
 .product-card p {
     font-size: 16px;
     font-weight: bold;
@@ -218,15 +187,20 @@ body {
     background-color: #0056b3;
 }
 
-/* Contenedor de paginación */
+/* ===================== */
+/* 📌 PAGINACIÓN */
+/* ===================== */
+
 .pagination {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    align-items: center;
+    width: 100%;
 }
 
-/* Botones de paginación */
+/* Estilos de botones de paginación */
 .pagination button {
     background-color: #007bff;
     color: white;
@@ -245,4 +219,158 @@ body {
 .pagination button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Indicador de página */
+.pagination span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ===================== */
+/* 📌 FOOTER */
+/* ===================== */
+
+.footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Centra los enlaces */
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Estilo de los enlaces */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* ===================== */
+/* 📌 LOGIN Y REGISTRO */
+/* ===================== */
+
+/* Contenedor del login */
+.login-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Inputs */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botón de login/registro */
+.login-container button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.2s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de alternar entre login y registro */
+.toggle-button {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.toggle-button:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de error o éxito */
+.message {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+/* Animación de fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================== */
+/* 📌 RESPONSIVIDAD (para móviles) */
+/* ===================== */
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+    }
+
+    .toggle-button {
+        font-size: 12px;
+    }
 }
