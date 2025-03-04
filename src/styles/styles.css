@@ -71,17 +71,93 @@ html, body {
     gap: 20px;
 }
 
-/* Estilo del carrito */
-.cart-link {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+/* ===================== */
+/* 📌 ESTILOS DEL CARRITO */
+/* ===================== */
+
+.cart-page {
+    text-align: center;
+    padding: 20px;
 }
 
-.cart-link:hover {
-    text-decoration: underline;
+.cart-page h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
 }
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item span {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 15px;
+}
+
+.cart-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.2s ease-in-out;
+}
+
+.cart-item button:hover {
+    background-color: darkred;
+}
+
+/* Botón de Vaciar Carrito */
+.clear-cart {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background 0.2s ease-in-out;
+}
+
+.clear-cart:hover {
+    background-color: grey;
+}
+
 
 /* Botón de logout */
 .logout-button {

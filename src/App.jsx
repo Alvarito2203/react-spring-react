@@ -6,12 +6,12 @@ import CartPage from "./pages/CartPage";
 import Login from "./components/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { CartProvider } from "./context/CartContext"; // Importar el contexto del carrito
 import "./styles/styles.css";
 
 function App() {
   const [user, setUser] = useState(null);
 
-  // Verificar si hay un usuario en el localStorage al cargar la app
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
@@ -21,43 +21,34 @@ function App() {
         if (parsedUser && parsedUser.correo) {
           setUser(parsedUser);
         } else {
-          localStorage.removeItem("user"); // Si los datos no son válidos, eliminarlos
+          localStorage.removeItem("user"); 
           setUser(null);
         }
       } catch (error) {
-        localStorage.removeItem("user"); // Si hay un error al leer, eliminarlo
+        localStorage.removeItem("user"); 
         setUser(null);
       }
     }
   }, []);
 
-  // Función para cerrar sesión
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
   };
 
   return (
-    <div>
-      {/* Solo mostrar el Header si el usuario está autenticado */}
-      {user && <Header onLogout={handleLogout} />}
-
-      <Routes>
-        {/* Si el usuario está logueado, redirige de Login a Home */}
-        <Route path="/" element={user ? <Navigate to="/home" /> : <Login onLogin={(user) => setUser(user)} />} />
-        
-        {/* Solo permitir acceso a Home si el usuario está autenticado */}
-        <Route path="/home" element={user ? <Home /> : <Navigate to="/" />} />
-        
-        {/* Solo permitir acceso a ProductPage si el usuario está autenticado */}
-        <Route path="/product/:id" element={user ? <ProductPage /> : <Navigate to="/" />} />
-        
-        {/* Solo permitir acceso al carrito si el usuario está autenticado */}
-        <Route path="/cart" element={user ? <CartPage /> : <Navigate to="/" />} />
-      </Routes>
-
-    {user && <Footer />}
-    </div>
+    <CartProvider>
+      <div>
+        {user && <Header onLogout={handleLogout} />}
+        <Routes>
+          <Route path="/" element={user ? <Navigate to="/home" /> : <Login onLogin={(user) => setUser(user)} />} />
+          <Route path="/home" element={user ? <Home /> : <Navigate to="/" />} />
+          <Route path="/product/:id" element={user ? <ProductPage /> : <Navigate to="/" />} />
+          <Route path="/cart" element={user ? <CartPage /> : <Navigate to="/" />} />
+        </Routes>
+        {user && <Footer />}
+      </div>
+    </CartProvider>
   );
 }
 
