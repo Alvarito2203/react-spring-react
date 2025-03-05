@@ -30,19 +30,18 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-
 /* ===================== */
-/* 📌 HEADER */
+/* 📌 HEADER - ESTILOS MEJORADOS */
 /* ===================== */
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1e1e1e;
-    padding: 15px 5%;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa; /* ✅ Color más claro y elegante */
+    padding: 20px 5%;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
@@ -55,13 +54,14 @@ html, body {
 
 .logo {
     height: 50px;
-    border-radius: 50%;
+    border-radius: 10px;
 }
 
 .logo-container h1 {
     font-size: 22px;
     font-weight: bold;
     margin: 0;
+    color: #007bff;
 }
 
 /* Barra de navegación */
@@ -69,6 +69,46 @@ html, body {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+/* Enlace del carrito */
+.cart-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.cart-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Indicador del número de productos en el carrito */
+.cart-count {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Botón de logout */
+.logout-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+    background-color: darkred;
 }
 
 /* ===================== */
@@ -141,6 +181,14 @@ html, body {
     background-color: darkred;
 }
 
+/* Sumatorio del precio total */
+.cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #222;
+}
+
 /* Botón de Vaciar Carrito */
 .clear-cart {
     background-color: black;
@@ -156,6 +204,25 @@ html, body {
 
 .clear-cart:hover {
     background-color: grey;
+}
+
+/* Botón de Volver Atrás */
+.back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: background 0.2s ease-in-out;
+    display: block;
+    margin: 20px auto;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
 }
 
 
@@ -306,115 +373,55 @@ html, body {
 }
 
 /* ===================== */
-/* 📌 FOOTER */
+/* 📌 FOOTER MEJORADO */
 /* ===================== */
 
 .footer {
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #ffffff; /* Color claro como el header */
+    color: #333;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
+    padding: 20px;
     width: 100%;
     font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-/* Centra los enlaces */
-.footer-links {
-    margin-top: 10px;
+/* Contenedor de elementos */
+.footer-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Enlaces del footer */
+.footer-links {
+    display: flex;
     gap: 15px;
 }
 
-/* Estilo de los enlaces */
 .footer-links a {
-    color: white;
+    color: #007bff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
 }
-/* ===================== */
-/* 📌 LOGIN Y REGISTRO */
-/* ===================== */
 
-/* Contenedor del login */
-.login-container {
-    width: 350px;
-    margin: 100px auto;
-    padding: 25px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Título */
-.login-container h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-/* Inputs */
-.login-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Botón de login/registro */
-.login-container button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background 0.2s ease-in-out;
-}
-
-.login-container button:hover {
-    background-color: #0056b3;
-}
-
-/* Botón de alternar entre login y registro */
-.toggle-button {
-    background: none;
-    color: #007bff;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
+/* Derechos reservados */
+.footer-text {
     font-size: 14px;
+    font-weight: bold;
 }
 
-.toggle-button:hover {
-    text-decoration: underline;
-}
 
-/* Mensajes de error o éxito */
-.message {
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.success {
-    color: green;
-}
-
-.error {
-    color: red;
-}
 
 /* Animación de fadeIn */
 @keyframes fadeIn {

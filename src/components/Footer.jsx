@@ -4,11 +4,15 @@ import "../styles/styles.css";
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>© {new Date().getFullYear()} Tienda de Coches. Todos los derechos reservados.</p>
-            <div className="footer-links">
-                <a href="#">Contacto</a>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Privacidad</a>
+            <div className="footer-container">
+                <span className="footer-text">
+                    © 2025 Concesionario Mercedes. Todos los derechos reservados.
+                </span>
+                <div className="footer-links">
+                    <a href="#">Contacto</a>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Privacidad</a>
+                </div>
             </div>
         </footer>
     );

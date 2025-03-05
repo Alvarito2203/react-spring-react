@@ -34,7 +34,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <h1>Catálogo de Coches</h1>
+              <h2 className="catalog-title">Catálogo de Coches</h2>
             
             {/* Barra de búsqueda en el lugar correcto */}
             <div className="search-container">
