@@ -21,8 +21,156 @@ html, body {
 }
 
 /* ===================== */
-/* 📌 CONTENEDOR PRINCIPAL */
+/* 📌 RESETEO GENERAL */
 /* ===================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+/* ===================== */
+/* 📌 CONTENEDOR PRINCIPAL DEL LOGIN */
+/* ===================== */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===================== */
+/* 📌 LOGIN CONTAINER */
+/* ===================== */
+
+.login-container {
+    width: 350px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===================== */
+/* 📌 TÍTULO */
+/* ===================== */
+
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ===================== */
+/* 📌 INPUTS */
+/* ===================== */
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* ===================== */
+/* 📌 BOTONES */
+/* ===================== */
+
+.login-container button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.2s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* ✅ Botón para alternar entre Login y Registro */
+.toggle-button {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.toggle-button:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Mensajes de error o éxito */
+.message {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+/* ===================== */
+/* 📌 ANIMACIONES */
+/* ===================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================== */
+/* 📌 RESPONSIVIDAD */
+/* ===================== */
+
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+    }
+
+    .toggle-button {
+        font-size: 12px;
+    }
+}
+
 
 .app-container {
     width: 100%;

@@ -47,6 +47,7 @@ const Login = ({ onLogin }) => {
     };
 
     return (
+        <div className="login-page">
         <div className="login-container">
             <h2>{isRegister ? "Registro" : "Iniciar Sesión"}</h2>
 
@@ -61,6 +62,7 @@ const Login = ({ onLogin }) => {
             <button className="toggle-button" onClick={() => { setIsRegister(!isRegister); setMessage(""); }}>
                 {isRegister ? "¿Ya tienes cuenta? Inicia sesión" : "¿No tienes cuenta? Regístrate"}
             </button>
+        </div>
         </div>
     );
 };
