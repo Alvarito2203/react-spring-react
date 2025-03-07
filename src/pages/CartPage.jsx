@@ -20,7 +20,8 @@ const CartPage = () => {
                 {cart.length > 0 ? (
                     cart.map((coche) => (
                         <li key={coche.id} className="cart-item">
-                            <img src={coche.imagen} alt={coche.marca} />
+                            {/* ✅ Asegurar que la imagen se obtiene de la base de datos */}
+                            <img src={coche.imagenUrl} alt={`${coche.marca} ${coche.modelo}`} />
                             <span>{coche.marca} {coche.modelo} - €{coche.precio}</span>
                             <button onClick={() => removeFromCart(coche.id)}>❌</button>
                         </li>
