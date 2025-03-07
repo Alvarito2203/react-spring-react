@@ -568,7 +568,136 @@ html, body {
     font-size: 14px;
     font-weight: bold;
 }
+/* ===================== */
+/* 📌 BOTÓN "VER DETALLES" */
+/* ===================== */
 
+.view-details-button {
+    background-color: #28a745;  /* ✅ Verde llamativo */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.view-details-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* ===================== */
+/* 📌 ESTILOS PARA DETALLES DEL PRODUCTO */
+/* ===================== */
+
+.product-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Contenedor flexible */
+.product-detail-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* ✅ Imagen bien distribuida */
+.product-detail-container img {
+    width: 50%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ✅ Texto estilizado */
+.product-info {
+    flex: 1;
+    text-align: left;
+}
+
+.product-info h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* ✅ Botón "Agregar al Carrito" */
+.add-to-cart-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ✅ Botón "Volver Atrás" */
+.back-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background 0.2s ease-in-out;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* ✅ RESPONSIVE para móviles */
+@media (max-width: 768px) {
+    .product-detail-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-detail-container img {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .add-to-cart-button, .back-button {
+        width: 100%;
+    }
+}
 
 
 /* Animación de fadeIn */
@@ -581,6 +710,57 @@ html, body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ===================== */
+/* 📌 BOTÓN "AGREGAR AL CARRITO" */
+/* ===================== */
+
+.add-to-cart-button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: scale(1.05);
+}
+
+/* ===================== */
+/* 📌 BOTÓN "VOLVER ATRÁS" */
+/* ===================== */
+
+.back-button {
+    background-color: #6c757d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
 }
 
 /* ===================== */
